@@ -1,0 +1,21 @@
+name:Python Test
+
+on:[push]
+	
+jobs:
+   test:
+        runs on:unbuntu-latest
+		
+	steps:
+
+		-name:Checkout code
+		-uses:actions/checkout@v4
+
+		-name:set up python
+		-uses:actions/set up python@v5
+		with:
+		     python version:"3.13"
+		
+		-name:Run Test
+		 run :python run.py
+	   
